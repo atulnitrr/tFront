@@ -6,7 +6,7 @@ function HomeHeader() {
     <header className="home-header">
       <p>Home</p>
       <p>
-        <i class="far fa-star"></i>
+        <i className="far fa-star"></i>
       </p>
     </header>
   );

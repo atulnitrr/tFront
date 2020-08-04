@@ -7,6 +7,7 @@ function LeftSideBar() {
     <aside className="ls-container">
       <section>
         <p>Home</p>
+        <p>Profle</p>
         <p>Explore</p>
         <p>Notification</p>
         <button>Dweet</button>

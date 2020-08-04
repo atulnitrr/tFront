@@ -67,3 +67,8 @@
   border: none;
   cursor: pointer;
 }
+
+.tw-ta-action-r button:disabled {
+  background-color: rgb(162, 193, 212);
+  color: #fff;
+}
