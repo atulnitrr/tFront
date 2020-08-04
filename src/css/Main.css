@@ -1,0 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.main-container {
+  border: 1px solid greenyellow;
+  display: flex;
+  flex-direction: column;
+  grid-column: 2/3;
+}
+
+.main-container > * {
+  padding: 0 15px;
+  /* background-color: rgba(0, 0, 0, 0.3); */
+}

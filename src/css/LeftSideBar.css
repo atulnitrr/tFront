@@ -9,10 +9,13 @@
   display: flex;
   flex-direction: column;
   padding: 0 10px 0 150px;
+  min-height: 100vh;
+  max-height: 100vh;
+  /* position: fixed; */
+  /* grid-column: 1/2; */
 }
 
 .ls-container section {
-  border: 1px solid greenyellow;
   flex: 8 1 100px;
   display: flex;
   flex-direction: column;
@@ -33,9 +36,9 @@
 }
 
 .ls-container section button {
-  background-color: #1ad1f2;
+  background-color: rgb(26, 145, 218);
   color: #fff;
-  border-radius: 20px;
+  border-radius: 25px;
   border: none;
   letter-spacing: 1px;
   font-weight: bold;

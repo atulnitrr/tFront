@@ -9,7 +9,7 @@ function LeftSideBar() {
         <p>Home</p>
         <p>Explore</p>
         <p>Notification</p>
-        <button>Tweet</button>
+        <button>Dweet</button>
       </section>
       <div>user detail</div>
     </aside>
