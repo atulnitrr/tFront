@@ -44,10 +44,48 @@
   font-weight: bold;
 }
 
-.ls-container div {
+.logout-top-wrapper {
   /* border: 1px solid greenyellow; */
   flex: 2 1 100px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  padding-bottom: 10px;
+  padding-left: 10px;
+}
+.logout-up-wrapper {
+  display: flex;
+  /* justify-content: space-between; */
+}
+
+.logout-up-wrapper > * {
+  /* border: 1px solid rebeccapurple; */
+}
+
+.logout-up-icon-wrapper {
+  flex: 2 1 0;
+}
+
+.logout-up-icon-wrapper i {
+  font-size: 50px;
+  padding: 2px 0 0 5px;
+}
+
+.logout-up-name {
+  flex: 6 1 0;
+  padding: 2px;
+}
+
+.logout-btn button {
+  width: 100%;
+  padding: 10px 0;
+  letter-spacing: 1px;
+  font-weight: bolder;
+  cursor: pointer;
+  background-color: rgba(26, 145, 218, 0.9);
+  /* background-image: linear-gradient(to right, red, goldenrod); */
+  border: none;
+  outline: none;
+  color: #fff;
+  border-radius: 25px;
 }

@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import "../css/Login.css";
 import axios from "axios";
 import { Link, withRouter } from "react-router-dom";
+import UserContext from "../context/UserContext";
 
 const PATH = "http://localhost:3033";
 
@@ -9,6 +10,7 @@ function Login(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [submitCount, setSubmitCoount] = useState(0);
+  const { userDispatch } = useContext(UserContext);
 
   useEffect(() => {
     async function login() {
@@ -19,7 +21,11 @@ function Login(props) {
         };
         const response = await axios.post(`${PATH}/login`, userDetail);
         if (response.status == 200) {
-          console.log(response.data);
+          const data = response.data.data;
+          userDispatch({
+            type: "LOGIN",
+            payload: { first_name: data.first_name, user_id: data.user_id },
+          });
           props.history.push("/");
         }
       } catch (error) {}
