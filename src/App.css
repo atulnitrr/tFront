@@ -5,7 +5,7 @@
 }
 
 .container {
-  border: 2px solid red;
+  /* border: 2px solid red; */
   display: grid;
   grid-template-columns: minmax(auto, 450px) minmax(500px, 1fr) minmax(
       auto,
@@ -16,5 +16,5 @@
 }
 
 .container > * {
-  border: 1px solid green;
+  /* border: 1px solid green; */
 }

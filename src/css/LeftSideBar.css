@@ -45,7 +45,7 @@
 }
 
 .ls-container div {
-  border: 1px solid greenyellow;
+  /* border: 1px solid greenyellow; */
   flex: 2 1 100px;
   display: flex;
   flex-direction: column;

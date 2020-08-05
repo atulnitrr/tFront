@@ -1,0 +1,62 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.tw-card {
+  display: flex;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 0 15px;
+}
+
+.tw-user-profile {
+  flex: 1 1 0;
+}
+
+.tw-card-content {
+  flex: 9 1 0;
+}
+
+.tw-card > * {
+  /* border: 1px solid rebeccapurple; */
+}
+
+.tw-card:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+  cursor: pointer;
+}
+
+.tw-user-profile {
+  margin-right: 5px;
+}
+
+.tw-card-content > * {
+  padding: 4px 0;
+}
+
+.tw-card-content-usr-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tw-card-content-tweet-action {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tw-card-content-tweet-action i {
+  padding: 7px;
+}
+
+.tw-card-content-tweet-action i:hover {
+  /* padding: 5px; */
+  cursor: pointer;
+  border-radius: 50%;
+  background-color: rgb(29, 161, 242, 0.2);
+}
+
+.fa-heart {
+  color: red;
+}

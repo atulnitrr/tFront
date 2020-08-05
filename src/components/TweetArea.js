@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Axios from "axios";
 import "../css/TweetArea.css";
+import AppContext from "../context/AppContext";
 const B_PATH = "http://localhost:3033";
 
 const user_id = "5f261a987989a7c1b4794172";
@@ -8,6 +9,7 @@ const user_id = "5f261a987989a7c1b4794172";
 function TweetArea() {
   const [tweet, setTweet] = useState("");
   const [submitCount, setSubmitCount] = useState(0);
+  const { appState, dispatch } = useContext(AppContext);
 
   useEffect(() => {
     async function sendTweet() {
@@ -16,8 +18,8 @@ function TweetArea() {
           tweet: tweet,
           user_id: user_id,
         };
-        const respone = await Axios.post(`${B_PATH}/tweet`, tweetData);
-        console.log(respone.data);
+        await Axios.post(`${B_PATH}/tweet`, tweetData);
+        dispatch({ type: "POST_TWEET" });
         setTweet("");
       } catch (error) {
         console.log(error);
