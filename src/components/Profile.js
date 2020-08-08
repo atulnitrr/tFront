@@ -26,44 +26,25 @@ function Profile(props) {
     fetchData();
   }, [user_id]);
   return (
-    <div className="pc-top-wrapper">
-      <div className="pc-user">
-        <div>
-          <i class="fas fa-arrow-circle-left"></i> {"  "}
-          <span> atul</span>
-          <section>0 tweets</section>
-        </div>
-        <section className="pc-img-wrapper">
-          <div className="profile-bg-img">
-            <img src={pbg} alt="profile-bg-img" />
-          </div>
-          <div className="pc-profile-image">
-            <img src={pp} alt="profile image" />
-          </div>
-        </section>
-        <section>
-          <div>message</div>
-          <div>notifications</div>
-          <button>Follow</button>
-        </section>
-        <section>
-          <span>bio desription</span>
+    <div className="up-top-wrapper">
+      <div className="up-ud">
+        <div className="up-tc">
           <div>
-            <div>location</div>
-            <div>link</div>
-            <div>Joining date</div>
+            <i class="fas fa-arrow-circle-left"></i>
           </div>
-        </section>
-
-        <section>
-          <span>0 followings</span>
-          <span>0 folowers</span>
-        </section>
-        <section>followed by Atul and 2 others you follow</section>
-        <section>
-          <span>Tweets</span>
-          <span>Likes</span>
-        </section>
+          <div className="up-tc-v">
+            <p>atul</p>
+            <span>200 Tweets</span>
+          </div>
+        </div>
+        <div>image wrapper</div>
+        <div>user action</div>
+        <div>user name</div>
+        <div>bio</div>
+        <div>location</div>
+        <div>200 followoing</div>
+        <div>Followed by</div>
+        <div>Tweets, media</div>
       </div>
       <div>
         <UserTweets userTweets={userTweets}></UserTweets>
