@@ -8,18 +8,31 @@ import UserProfileTop from "./userprofile/UserProfileTop";
 const B_PATH = "http://localhost:3033";
 
 function Profile(props) {
-  // const {
-  //   params: { user_id },
-  // } = props.match;
-
-  let { user_id } = props;
+  // let { user_id } = props;
+  const user_info = {
+    profile_user_id: "",
+    handle_id: "",
+  };
+  user_info.profile_user_id = props.user_id;
 
   const [userTweets, setUserTwet] = useState([]);
 
   useEffect(() => {
     async function fetchData() {
       try {
-        const respone = await axios.get(`${B_PATH}/tweet/user/${user_id}`);
+        const respone = await axios.get(
+          `${B_PATH}/user/${user_info.profile_user_id}}`
+        );
+      } catch (error) {}
+    }
+  }, []);
+
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const respone = await axios.get(
+          `${B_PATH}/tweet/user/${user_info.profile_user_id}`
+        );
         setUserTwet(respone.data.tweets);
       } catch (error) {}
     }

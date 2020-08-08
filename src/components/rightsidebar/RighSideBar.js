@@ -2,8 +2,9 @@ import React from "react";
 
 function RighSideBar() {
   return (
-    <aside>
-      <h3>right side bar</h3>
+    <aside className="rs-tw">
+      <div>search area</div>
+      <div>peopele you may follow</div>
     </aside>
   );
 }

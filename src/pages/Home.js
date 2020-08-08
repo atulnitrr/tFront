@@ -1,7 +1,7 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
 import LeftSideBar from "../components/LeftSideBar";
-import RighSideBar from "../components/RighSideBar";
+import RighSideBar from "../components/rightsidebar/RighSideBar";
 import Main from "../components/Main";
 import Profile from "../components/Profile";
 

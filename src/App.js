@@ -33,7 +33,7 @@ function App() {
             <Route
               path="/"
               exact
-              component={userState.isLoggedIn ? Home : Login}
+              component={!userState.isLoggedIn ? Login : ""}
             />
 
             {userState.isLoggedIn ? (
