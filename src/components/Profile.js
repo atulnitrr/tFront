@@ -14,16 +14,12 @@ function Profile(props) {
 
   let { user_id } = props;
 
-  console.log("user_id");
-  console.log(user_id);
-
   const [userTweets, setUserTwet] = useState([]);
 
   useEffect(() => {
     async function fetchData() {
       try {
         const respone = await axios.get(`${B_PATH}/tweet/user/${user_id}`);
-
         setUserTwet(respone.data.tweets);
       } catch (error) {}
     }

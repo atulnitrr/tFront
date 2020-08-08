@@ -2,14 +2,16 @@ import React, { useState, useEffect, useContext } from "react";
 import Axios from "axios";
 import "../css/TweetArea.css";
 import AppContext from "../context/AppContext";
+import UserContext from "../context/UserContext";
 const B_PATH = "http://localhost:3033";
-
-const user_id = "5f261a987989a7c1b4794172";
 
 function TweetArea() {
   const [tweet, setTweet] = useState("");
   const [submitCount, setSubmitCount] = useState(0);
   const { dispatch } = useContext(AppContext);
+  const {
+    userState: { user_id },
+  } = useContext(UserContext);
 
   useEffect(() => {
     async function sendTweet() {

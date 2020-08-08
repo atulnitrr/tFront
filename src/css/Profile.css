@@ -143,7 +143,11 @@
 
 .up-ud .up-bio {
   padding: 0 15px;
+
   /* border: 1px solid seagreen; */
+}
+.up-ud .up-bio p {
+  font-size: 15px;
 }
 
 .up-ud .up-linfo {

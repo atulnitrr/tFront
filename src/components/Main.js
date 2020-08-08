@@ -6,13 +6,15 @@ import TweetArea from "./TweetArea";
 
 import AppContext from "../context/AppContext";
 import UserTweets from "./UserTweets";
+import UserContext from "../context/UserContext";
 const B_PATH = "http://localhost:3033";
-
-const user_id = "5f261a987989a7c1b4794172";
 
 function Main() {
   const [userTweets, setUserTwet] = useState([]);
   const { appState } = useContext(AppContext);
+  const {
+    userState: { user_id },
+  } = useContext(UserContext);
   const profileTimeline = true;
 
   useEffect(() => {

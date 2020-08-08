@@ -4,12 +4,12 @@ import "./App.css";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
 import Home from "./pages/Home";
+import NotFound from "./pages/NotFound";
 import AppContext, { ourReducer, initialState } from "./context/AppContext";
 import UserContext, {
   userStateReducer,
   userInitialState,
 } from "./context/UserContext";
-import Profile from "./components/Profile";
 
 function App() {
   const [appState, dispatch] = useReducer(ourReducer, initialState);
@@ -29,8 +29,21 @@ function App() {
             <Route path="/signup" exact>
               <SignUp></SignUp>
             </Route>
-            <Route path="/profile/:user_id" exact component={Home}></Route>
-            <Route path="/" exact component={Home}></Route>
+
+            <Route
+              path="/"
+              exact
+              component={userState.isLoggedIn ? Home : Login}
+            />
+
+            {userState.isLoggedIn ? (
+              <>
+                <Route path="/profile/:user_id" exact component={Home}></Route>
+                <Route path="/" exact component={Home}></Route>
+              </>
+            ) : (
+              ""
+            )}
           </div>
         </BrowserRouter>
       </AppContext.Provider>
