@@ -4,6 +4,7 @@ import axios from "axios";
 import "../css/Profile.css";
 import pbg from "../img/pbg.jpg";
 import pp from "../img/pp.jpg";
+import UserProfileTop from "./userprofile/UserProfileTop";
 const B_PATH = "http://localhost:3033";
 
 function Profile(props) {
@@ -11,8 +12,10 @@ function Profile(props) {
   //   params: { user_id },
   // } = props.match;
 
-  const { user_id } = props;
-  // user_id = "5f261a987989a7c1b4794172";
+  let { user_id } = props;
+
+  console.log("user_id");
+  console.log(user_id);
 
   const [userTweets, setUserTwet] = useState([]);
 
@@ -20,22 +23,16 @@ function Profile(props) {
     async function fetchData() {
       try {
         const respone = await axios.get(`${B_PATH}/tweet/user/${user_id}`);
+
         setUserTwet(respone.data.tweets);
       } catch (error) {}
     }
     fetchData();
-  }, [user_id]);
+  }, []);
   return (
     <div className="up-top-wrapper">
       <div className="up-ud">
-        <div className="up-tc">
-          <i className="fas fa-arrow-circle-left"></i>
-
-          <div className="up-tc-v">
-            <p>atul</p>
-            <span>200 Tweets</span>
-          </div>
-        </div>
+        <UserProfileTop />
         <div className="up-img-w">
           <img src={pbg} alt="" />
           <div>

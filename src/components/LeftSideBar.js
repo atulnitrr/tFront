@@ -21,7 +21,7 @@ function LeftSideBar(props) {
     <aside className="ls-container">
       <section>
         <Link to="/">Home</Link>
-        <Link to="/profile">Profle</Link>
+        <Link to={`/profile/${user_id}`}>Profle</Link>
         <Link to="/noti">Notification</Link>
         <Link to="/exp">Explore</Link>
         <button>Dweet</button>

@@ -18,6 +18,10 @@
   background-color: #fff;
 }
 
+.up-ud .up-tc a {
+  text-decoration: none;
+}
+
 .up-ud .up-tc i {
   /* border: 1px solid red; */
   cursor: pointer;
