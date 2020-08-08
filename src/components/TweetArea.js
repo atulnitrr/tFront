@@ -9,7 +9,7 @@ const user_id = "5f261a987989a7c1b4794172";
 function TweetArea() {
   const [tweet, setTweet] = useState("");
   const [submitCount, setSubmitCount] = useState(0);
-  const { appState, dispatch } = useContext(AppContext);
+  const { dispatch } = useContext(AppContext);
 
   useEffect(() => {
     async function sendTweet() {
@@ -53,7 +53,7 @@ function TweetArea() {
         <div className="tw-ta-action">
           <div></div>
           <div className="tw-ta-action-r">
-            <button disabled={tweet.trim().length == 0} onClick={handleSubmit}>
+            <button disabled={tweet.trim().length === 0} onClick={handleSubmit}>
               Dweet
             </button>
           </div>

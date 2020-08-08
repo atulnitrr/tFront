@@ -1,8 +1,10 @@
 import React, { useContext } from "react";
-import { withRouter } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
 import UserContext from "../context/UserContext";
 
 import "../css/LeftSideBar.css";
+
+// https://learnwithparam.com/blog/dynamic-pages-in-react-router/
 
 function LeftSideBar(props) {
   const {
@@ -18,10 +20,10 @@ function LeftSideBar(props) {
   return (
     <aside className="ls-container">
       <section>
-        <p>Home</p>
-        <p>Profle</p>
-        <p>Explore</p>
-        <p>Notification</p>
+        <Link to="/">Home</Link>
+        <Link to="/profile">Profle</Link>
+        <Link to="/noti">Notification</Link>
+        <Link to="/exp">Explore</Link>
         <button>Dweet</button>
       </section>
       <div className="logout-top-wrapper">

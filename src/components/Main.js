@@ -3,15 +3,17 @@ import Axios from "axios";
 import "../css/Main.css";
 import HomeHeader from "./HomeHeader";
 import TweetArea from "./TweetArea";
-import TweetCard from "./TweetCard";
+
 import AppContext from "../context/AppContext";
+import UserTweets from "./UserTweets";
 const B_PATH = "http://localhost:3033";
 
 const user_id = "5f261a987989a7c1b4794172";
 
 function Main() {
-  const [userTweet, setUserTwet] = useState([]);
-  const { appState, dispatch } = useContext(AppContext);
+  const [userTweets, setUserTwet] = useState([]);
+  const { appState } = useContext(AppContext);
+  const profileTimeline = true;
 
   useEffect(() => {
     async function fetchData() {
@@ -28,12 +30,7 @@ function Main() {
     <main className="main-container">
       <HomeHeader></HomeHeader>
       <TweetArea></TweetArea>
-      <section className="main-secction">
-        {userTweet.map((userTweet) => {
-          const { _id, tweet } = userTweet;
-          return <TweetCard key={_id} userTweet={userTweet}></TweetCard>;
-        })}
-      </section>
+      <UserTweets userTweets={userTweets}></UserTweets>
     </main>
   );
 }

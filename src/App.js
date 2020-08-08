@@ -9,6 +9,7 @@ import UserContext, {
   userStateReducer,
   userInitialState,
 } from "./context/UserContext";
+import Profile from "./components/Profile";
 
 function App() {
   const [appState, dispatch] = useReducer(ourReducer, initialState);
@@ -28,9 +29,8 @@ function App() {
             <Route path="/signup" exact>
               <SignUp></SignUp>
             </Route>
-            <Route path="/" exact>
-              <Home></Home>
-            </Route>
+            <Route path="/profile/:user_id" exact component={Home}></Route>
+            <Route path="/" exact component={Home}></Route>
           </div>
         </BrowserRouter>
       </AppContext.Provider>

@@ -4,9 +4,9 @@ import moment from "moment";
 import AppContext from "../context/AppContext";
 
 function TweetCard(props) {
-  const { appState, dispatch } = useContext(AppContext);
+  // const { appState, dispatch } = useContext(AppContext);
   const {
-    userTweet: { tweet, _id, user_id, created },
+    userTweet: { tweet, user_id, created },
   } = props;
 
   return (

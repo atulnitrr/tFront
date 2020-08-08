@@ -23,7 +23,7 @@ function SignUp(props) {
           password: password,
         };
         const response = await axios.post(`${PATH}/signUp`, userDetail);
-        if (response.status == 200) {
+        if (response.status === 200) {
           console.log(response.data);
           console.log(props.history);
           props.history.push("/login");
@@ -33,7 +33,7 @@ function SignUp(props) {
     if (registerCount > 0) {
       register();
     }
-  }, [registerCount]);
+  }, [registerCount, props.history]);
   const handleSubmit = (e) => {
     e.preventDefault();
     setRegisterCount((prev) => prev + 1);

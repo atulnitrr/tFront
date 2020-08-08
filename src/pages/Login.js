@@ -10,7 +10,13 @@ function Login(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [submitCount, setSubmitCoount] = useState(0);
-  const { userDispatch } = useContext(UserContext);
+  const { userDispatch, userState } = useContext(UserContext);
+
+  useEffect(() => {
+    if (userState.isLoggedIn) {
+      props.history.push("/");
+    }
+  }, [userState.isLoggedIn, props.history]);
 
   useEffect(() => {
     async function login() {
@@ -20,7 +26,7 @@ function Login(props) {
           password: password,
         };
         const response = await axios.post(`${PATH}/login`, userDetail);
-        if (response.status == 200) {
+        if (response.status === 200) {
           const data = response.data.data;
           userDispatch({
             type: "LOGIN",
@@ -34,6 +40,8 @@ function Login(props) {
     if (submitCount > 0) {
       login();
     }
+
+    // eslint-disable-next-line
   }, [submitCount]);
 
   const handleSubmit = (e) => {

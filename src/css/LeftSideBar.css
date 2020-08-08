@@ -29,7 +29,10 @@
   transition: all 0.5s;
 }
 
-.ls-container section p:hover {
+.ls-container section a {
+  text-decoration: none;
+}
+.ls-container section a:hover {
   /* background-color: rgb(29, 161, 242); */
   background-color: rgba(29, 161, 242, 0.1);
   border-radius: 30px;
