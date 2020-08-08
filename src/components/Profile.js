@@ -29,22 +29,66 @@ function Profile(props) {
     <div className="up-top-wrapper">
       <div className="up-ud">
         <div className="up-tc">
-          <div>
-            <i class="fas fa-arrow-circle-left"></i>
-          </div>
+          <i className="fas fa-arrow-circle-left"></i>
+
           <div className="up-tc-v">
             <p>atul</p>
             <span>200 Tweets</span>
           </div>
         </div>
-        <div>image wrapper</div>
-        <div>user action</div>
-        <div>user name</div>
-        <div>bio</div>
-        <div>location</div>
-        <div>200 followoing</div>
-        <div>Followed by</div>
-        <div>Tweets, media</div>
+        <div className="up-img-w">
+          <img src={pbg} alt="" />
+          <div>
+            <img src={pp} alt="" />
+          </div>
+        </div>
+        <div className="up-ua">
+          <i className="far fa-envelope"></i>
+          <i className="far fa-bell"></i>
+          <button>follow</button>
+        </div>
+        <div className="up-un-d">
+          <p>atul</p>
+          <span>@atul</span>
+        </div>
+        <div className="up-bio">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+            voluptatem autem nostrum quod, officiis voluptatum fugiat laborum
+            rem, dolor porro modi consequuntur
+          </p>
+        </div>
+        <div className="up-linfo">
+          <div className="up-linfo-item">
+            <i className="fas fa-map-marker-alt"></i>
+            <p>Bengaluru</p>
+          </div>
+          <div className="up-linfo-item">
+            <i className="fas fa-link"></i>
+            <p>link</p>
+          </div>
+          <div className="up-linfo-item">
+            <i className="far fa-calendar-alt"></i>
+            <p>Joined January 2020</p>
+          </div>
+        </div>
+        <div className="up-fc">
+          <div className="up-fc-item">
+            <span>200</span>
+            <p>Following</p>
+          </div>
+          <div className="up-fc-item">
+            <span>2300</span>
+            <p>Followers</p>
+          </div>
+        </div>
+        {/* <div>Followed by</div> */}
+        <div className="up-nl">
+          <div className="up-nl-i">Tweets</div>
+          <div className="up-nl-i">Replies</div>
+          <div className="up-nl-i">Media</div>
+          <div className="up-nl-i">Likes</div>
+        </div>
       </div>
       <div>
         <UserTweets userTweets={userTweets}></UserTweets>

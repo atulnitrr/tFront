@@ -1,15 +1,37 @@
 .up-top-wrapper {
   grid-column: 2/3;
   border: 2px solid red;
-  padding: 0 15px;
 }
 
-.up-tc {
+.up-ud > * {
+  margin-bottom: 5px;
+}
+
+.up-ud .up-tc {
   display: flex;
   align-items: center;
+  padding: 4px 15px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: #fff;
 }
 
-.up-tc > * {
+.up-ud .up-tc i {
+  /* border: 1px solid red; */
+  cursor: pointer;
+  margin-right: 10px;
+  padding: 5px;
+}
+
+.up-ud .up-tc i:hover {
+  background-color: rgba(28, 160, 242, 0.8);
+  border-radius: 50%;
+  color: #fff;
+}
+
+.up-tc > div {
   padding-right: 10px;
   margin-right: 5px;
 }
@@ -22,4 +44,156 @@
 .up-tc span {
   font-size: 15px;
   color: #657786;
+}
+
+.up-ud .up-img-w {
+  height: 200px;
+  position: relative;
+}
+
+.up-ud .up-img-w img {
+  width: 100%;
+  height: 100%;
+}
+
+.up-ud .up-img-w div {
+  position: absolute;
+  top: calc(54%);
+  left: calc(5%);
+  height: 150px;
+  width: 150px;
+  background-color: #fff;
+  border-radius: 50%;
+  padding: 6px;
+  cursor: pointer;
+}
+
+.up-ud .up-img-w div img {
+  border-radius: 50%;
+}
+
+.up-ud .up-ua {
+  /* border: 1px solid rebeccapurple; */
+  padding: 5px 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.up-ud .up-ua > * {
+  margin-left: 25px;
+  padding: 3px 6px;
+  /* border: 1px solid rebeccapurple; */
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.up-ud .up-ua button {
+  margin-right: 10px;
+  padding: 4px 15px;
+  letter-spacing: 1px;
+  font-weight: bold;
+  border-radius: 25px;
+  /* background-color: #1da1f2; */
+  background-color: #fff;
+  color: #1da1f2;
+  border: 1px solid #1da1f2;
+  outline: none;
+}
+
+.up-ud .up-ua i {
+  font-size: 24px;
+  border-radius: 50%;
+  background-color: #fff;
+  color: #1da1f2;
+  border: 1px solid rgb(28, 160, 242);
+  display: flex;
+  align-items: center;
+}
+
+.up-ud .up-ua button:hover,
+.up-ud .up-ua i:hover {
+  background-color: rgb(28, 160, 242, 0.1);
+}
+
+.up-ud .up-un-d {
+  /* border: 1px solid green; */
+  padding: 0px 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.up-ud .up-un-d > * {
+  padding: 2px 0;
+}
+
+.up-ud .up-un-d p {
+  font-size: 19px;
+  color: #14171a;
+}
+
+.up-ud .up-un-d span {
+  font-size: 15px;
+  color: #657786;
+}
+
+.up-ud .up-bio {
+  padding: 0 15px;
+  /* border: 1px solid seagreen; */
+}
+
+.up-ud .up-linfo {
+  /* border: 1px solid seagreen; */
+  padding: 3px 15px;
+  display: flex;
+}
+
+.up-ud .up-linfo .up-linfo-item {
+  margin-right: 15px;
+  display: flex;
+}
+
+.up-ud .up-linfo .up-linfo-item > * {
+  padding-right: 6px;
+}
+
+.up-ud .up-fc {
+  /* border: 1px solid green; */
+  padding: 3px 15px;
+  display: flex;
+}
+
+.up-ud .up-fc .up-fc-item {
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.up-ud .up-fc .up-fc-item > * {
+  padding-right: 10px;
+}
+
+.up-ud .up-fc .up-fc-item p {
+  color: #657786;
+  font-size: 17px;
+}
+
+.up-ud .up-nl {
+  /* padding: 0 15px; */
+  display: flex;
+  justify-content: center;
+}
+
+.up-ud .up-nl .up-nl-i {
+  flex: 1 1 0;
+  padding: 10px 15px;
+  display: flex;
+  justify-content: center;
+  transition: all 0.5s;
+  cursor: pointer;
+  color: #657786;
+}
+
+.up-ud .up-nl .up-nl-i:hover {
+  background-color: rgb(28, 160, 242, 0.2);
 }
