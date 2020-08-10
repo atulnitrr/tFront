@@ -1,0 +1,28 @@
+.rs-susr {
+  /* border: 1px solid rebeccapurple; */
+  padding: 5px 15px;
+  margin: 0px 3px;
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+
+.rs-susr:hover {
+  background-color: rgba(131, 174, 223, 0.5);
+  border-radius: 20px;
+}
+.rs-susr a {
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* .rs-tw .pto .p-to-f span {
+  padding: 2px 8px;
+  cursor: pointer;
+}
+
+.rs-tw .pto .p-to-f span:hover {
+  background-color: rgba(131, 174, 223, 0.5);
+  border-radius: 20px;
+} */

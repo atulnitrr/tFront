@@ -1,47 +1,30 @@
 import React, { useState, useEffect } from "react";
 import UserTweets from "./UserTweets";
-import axios from "axios";
+
 import "../css/Profile.css";
 import pbg from "../img/pbg.jpg";
 import pp from "../img/pp.jpg";
 import UserProfileTop from "./userprofile/UserProfileTop";
+import useUserInfo from "./hooks/useUserInfoApi";
+import useUserTweetsApi from "./hooks/useUserTweetsApi";
 const B_PATH = "http://localhost:3033";
 
 function Profile(props) {
+  const profile_user_id = props.user_id;
+  console.log("user _id ---");
+  console.log(profile_user_id);
+  const { userInfo } = useUserInfo(profile_user_id);
+  const { _id, first_name, last_name, created } = userInfo;
   // let { user_id } = props;
-  const user_info = {
-    profile_user_id: "",
-    handle_id: "",
-  };
-  user_info.profile_user_id = props.user_id;
 
-  const [userTweets, setUserTwet] = useState([]);
+  const { tweets } = useUserTweetsApi(profile_user_id);
 
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        const respone = await axios.get(
-          `${B_PATH}/user/${user_info.profile_user_id}}`
-        );
-      } catch (error) {}
-    }
-  }, []);
+  // useEffect(() => {}, [profile_user_id]);
 
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        const respone = await axios.get(
-          `${B_PATH}/tweet/user/${user_info.profile_user_id}`
-        );
-        setUserTwet(respone.data.tweets);
-      } catch (error) {}
-    }
-    fetchData();
-  }, []);
   return (
     <div className="up-top-wrapper">
       <div className="up-ud">
-        <UserProfileTop />
+        <UserProfileTop userInfo={userInfo} />
         <div className="up-img-w">
           <img src={pbg} alt="" />
           <div>
@@ -97,7 +80,7 @@ function Profile(props) {
         </div>
       </div>
       <div>
-        <UserTweets userTweets={userTweets}></UserTweets>
+        <UserTweets userTweets={tweets}></UserTweets>
       </div>
     </div>
   );

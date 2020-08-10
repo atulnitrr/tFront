@@ -7,32 +7,24 @@ import TweetArea from "./TweetArea";
 import AppContext from "../context/AppContext";
 import UserTweets from "./UserTweets";
 import UserContext from "../context/UserContext";
+import useUserTweetsApi from "./hooks/useUserTweetsApi";
 const B_PATH = "http://localhost:3033";
 
 function Main() {
-  const [userTweets, setUserTwet] = useState([]);
+  // const [userTweets, setUserTwet] = useState([]);
   const { appState } = useContext(AppContext);
   const {
     userState: { user_id },
   } = useContext(UserContext);
   const profileTimeline = true;
 
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        const respone = await Axios.get(`${B_PATH}/tweet/user/${user_id}`);
-        setUserTwet(respone.data.tweets);
-      } catch (error) {}
-    }
-
-    fetchData();
-  }, [appState.postTweetSuccessCount]);
+  const { tweets } = useUserTweetsApi(user_id, appState.postTweetSuccessCount);
 
   return (
     <main className="main-container">
       <HomeHeader></HomeHeader>
       <TweetArea></TweetArea>
-      <UserTweets userTweets={userTweets}></UserTweets>
+      <UserTweets userTweets={tweets}></UserTweets>
     </main>
   );
 }

@@ -1,7 +1,10 @@
 import React from "react";
 import { withRouter, Link } from "react-router-dom";
 
-function UserProfileTop() {
+function UserProfileTop(props) {
+  const {
+    userInfo: { _id, first_name, last_name },
+  } = props;
   return (
     <div className="up-tc">
       <Link to="/">
@@ -9,7 +12,7 @@ function UserProfileTop() {
       </Link>
 
       <div className="up-tc-v">
-        <p>atul</p>
+        <p>{first_name}</p>
         <span>200 Tweets</span>
       </div>
     </div>
