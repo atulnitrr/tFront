@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useContext } from "react";
-import Axios from "axios";
 import "../css/Main.css";
 import HomeHeader from "./HomeHeader";
 import TweetArea from "./TweetArea";

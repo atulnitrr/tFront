@@ -7,6 +7,7 @@ import pp from "../img/pp.jpg";
 import UserProfileTop from "./userprofile/UserProfileTop";
 import useUserInfo from "./hooks/useUserInfoApi";
 import useUserTweetsApi from "./hooks/useUserTweetsApi";
+import FollowBtn from "./profilec/FollowBtn";
 const B_PATH = "http://localhost:3033";
 
 function Profile(props) {
@@ -34,7 +35,7 @@ function Profile(props) {
         <div className="up-ua">
           <i className="far fa-envelope"></i>
           <i className="far fa-bell"></i>
-          <button>follow</button>
+          <FollowBtn />
         </div>
         <div className="up-un-d">
           <p>atul</p>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Switch, Route } from "react-router-dom";
+
 import LeftSideBar from "../components/LeftSideBar";
 import RighSideBar from "../components/rightsidebar/RighSideBar";
 import Main from "../components/Main";

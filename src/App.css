@@ -12,7 +12,8 @@
       450px
     );
 
-  min-height: 100vh;
+  height: 100vh;
+  overflow: auto;
 }
 
 .container > * {

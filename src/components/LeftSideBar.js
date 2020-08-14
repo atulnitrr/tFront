@@ -36,7 +36,9 @@ function LeftSideBar(props) {
             <p>
               {" "}
               <span>@</span>
-              {`${first_name}${user_id.slice(-10)}`}
+              {`${first_name}${
+                user_id === undefined ? "" : user_id.slice(-10)
+              }`}
             </p>
           </div>
         </div>
