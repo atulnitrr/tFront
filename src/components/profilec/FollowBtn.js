@@ -9,6 +9,8 @@ function FollowBtn() {
     if ("follow" === value) {
       // network call
       setBtnText("following");
+      btnRef.current.style.backgroundColor = "#1A91DAE6";
+      btnRef.current.style.color = "#FFF";
     } else if ("following" === value || "unfollow" === value) {
       setBtnText("follow");
       btnRef.current.style.backgroundColor = "#fff";
