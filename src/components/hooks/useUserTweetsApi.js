@@ -11,6 +11,7 @@ const useUserTweetsApi = (user_id, postTweetSuccessCount) => {
         console.log("user _D");
         console.log(user_id);
         const respone = await axios.get(`${B_PATH}/tweet/user/${user_id}`);
+
         console.log("tweets");
         console.log(respone.data.tweets);
         setTweets(respone.data.tweets);

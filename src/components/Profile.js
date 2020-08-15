@@ -16,11 +16,8 @@ function Profile(props) {
   console.log(profile_user_id);
   const { userInfo } = useUserInfo(profile_user_id);
   const { _id, first_name, last_name, created } = userInfo;
-  // let { user_id } = props;
 
   const { tweets } = useUserTweetsApi(profile_user_id);
-
-  // useEffect(() => {}, [profile_user_id]);
 
   return (
     <div className="up-top-wrapper">
@@ -35,7 +32,7 @@ function Profile(props) {
         <div className="up-ua">
           <i className="far fa-envelope"></i>
           <i className="far fa-bell"></i>
-          <FollowBtn />
+          <FollowBtn profile_user_id={profile_user_id} />
         </div>
         <div className="up-un-d">
           <p>atul</p>

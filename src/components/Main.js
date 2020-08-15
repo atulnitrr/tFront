@@ -7,17 +7,23 @@ import AppContext from "../context/AppContext";
 import UserTweets from "./UserTweets";
 import UserContext from "../context/UserContext";
 import useUserTweetsApi from "./hooks/useUserTweetsApi";
+import useHomeTimeLineApi from "./hooks/useHomeTimelineTweetsApi";
 const B_PATH = "http://localhost:3033";
 
 function Main() {
   // const [userTweets, setUserTwet] = useState([]);
-  const { appState } = useContext(AppContext);
+  const {
+    appState: { postTweetSuccessCount },
+  } = useContext(AppContext);
   const {
     userState: { user_id },
   } = useContext(UserContext);
   const profileTimeline = true;
 
-  const { tweets } = useUserTweetsApi(user_id, appState.postTweetSuccessCount);
+  const { tweets } = useHomeTimeLineApi(
+    `${B_PATH}/hometimeline/${user_id}`,
+    postTweetSuccessCount
+  );
 
   return (
     <main className="main-container">
